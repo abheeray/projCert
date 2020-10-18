@@ -19,3 +19,6 @@ If you are a beginner and would like me to explain something in the code, or if 
 ## Lisence
 
 MIT
+
+## Test Changes for project setup checks ...
+# Test change 1
