@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 
@@ -18,12 +19,22 @@ public class ClickAboutUs {
   WebDriver driver;
  
   @BeforeMethod
-  public void launch() {
+  public void launch() throws Exception{
 	  
-	    System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-	    driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	  
+	  	//Windows:
+	    //System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+	  	//driver = new ChromeDriver();
+		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	    //Linux:
+	    System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+	    ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--no-sandbox");
+        WebDriver driver = new ChromeDriver(chromeOptions);
+        
 		driver.get("http://35.202.36.235:9000/");
+		Thread.sleep(1000);
   }
   
   @Test
