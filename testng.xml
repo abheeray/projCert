@@ -3,7 +3,8 @@
 <suite name="sampleapp-test-Suite">
   <test thread-count="5" name="sampleapp-tests">
     <classes>
-      <class name="com.edu.ClickAboutUs"/>
+      <!--class name="com.edu.ClickAboutUs"/-->
+	  <class name="com.edu.Testmain"/>
       <!-- class name="com.edu.NewTest2"/ -->
     </classes>
   </test> 
